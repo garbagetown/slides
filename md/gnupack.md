@@ -1,13 +1,14 @@
 # gnupack を使おう
-2015-12-10
+2015-12-10<br/>
+DTS Developer's Meetup #9
 
 ---
 
 ## 自己紹介
 - 梅澤 雄一郎
-- 業務
+- 産業公共事業本部産業事業部
   - オムニチャネル案件ビッグデータ担当
-- 課外活動
+- 業務外
   - Play Framework ドキュメント翻訳 (休憩中...)
   - WEB+DB PRESS vol.71 寄稿
   - Developer's Summit 2013 登壇
@@ -57,7 +58,7 @@
 ## 一方その頃シェル芸人は
 ```sh
 $ cat access.log \               　　 # アクセスログの中身を
-  | awk -F'\t' '{ print $1 }' \ 　　 # タブで区切って先頭だけ出力
+  | awk -F'\t' '{ print $1 }' \ 　 　 # タブで区切って先頭だけ出力
   | sort \                       　　 # 並び替えて
   | uniq -c \                    　　 # 集約して件数を取得して
   | sort -nr \                   　　 # 数値の降順として並び替えて
@@ -72,12 +73,12 @@ $ cat access.log \               　　 # アクセスログの中身を
 ---
 
 ## 黒い画面に対する敷居
-- なんだか怖くて近寄りがたい
 - 業務はやっぱりウインドーズ
   - コマンドプロンプトの前世紀感
   - PowerShell の異常な背景色
 - Cygwin, coLinux, VirtualBox のイマイチ感
   - 管理者権限が与えられない現場もある
+- そもそも黒い画面はなんだか怖い
 
 ---
 
@@ -107,25 +108,18 @@ $ cat access.log \               　　 # アクセスログの中身を
 ---
 
 ## おれの黒い画面
-(ここにスクリーンショット貼る)  
+![](../img/gnupack_001.jpg)
 zsh, oh-my-zsh, tmux, tig, java 等を追加
-
----
-
-## 参考
-- [gnupack Users Guide](http://gnupack.osdn.jp/docs/UsersGuide.html)
-- [gnupack(Cygwin) + oh-my-zsh + tmuxの環境を構築する - yuukiar.co](http://yuukiar.co/blog/2015/05/28/setup-zsh-tmux-on-cygwin-gnupack/)
 
 ---
 
 ## gnupack が解決する問題
 - ウインドーズでも黒い画面
+  - 管理者権限不要
   - ファイルシステムのシームレスな統合
-- 管理者権限不要
-- 若年性健忘症
-  - history 大活躍
-- バージョン管理
-  - git 大活躍
+- (比較的) 美しいフォント
+- history がメモ代わり
+- git でおれおれバージョン管理
 
 ---
 
@@ -137,10 +131,16 @@ zsh, oh-my-zsh, tmux, tig, java 等を追加
 ---
 
 ## まとめ
-- gnupack で黒い画面に慣れ親しもう
-  - 仕事で使う道具を使いこなそう
-  - 仕事を速く終わらせよう
-- ~~Mac を使おう~~
+- ~~Mac/Linux を使おう~~
+- 仕事で使う道具を選ぼう
+- 仕事で使う道具に慣れよう
+- 仕事を速く終わらせよう
+
+---
+
+## 参考
+- [gnupack Users Guide](http://gnupack.osdn.jp/docs/UsersGuide.html)
+- [gnupack(Cygwin) + oh-my-zsh + tmuxの環境を構築する - yuukiar.co](http://yuukiar.co/blog/2015/05/28/setup-zsh-tmux-on-cygwin-gnupack/)
 
 ---
 
