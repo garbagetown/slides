@@ -108,7 +108,7 @@ $ cat access.log \               　　 # アクセスログの中身を
 ---
 
 ## おれの黒い画面
-![](../img/gnupack_001.jpg)
+![](img/gnupack_001.jpg)
 zsh, oh-my-zsh, tmux, tig, java 等を追加
 
 ---
