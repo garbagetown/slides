@@ -125,8 +125,12 @@ zsh, oh-my-zsh, tmux, tig, java 等を追加
 
 ## gnupack が解決しない問題
 - cygwin の問題
-  - 64bit 版の場合、マルチバイトパスの補完が重い?
+  - マルチバイトパスの補完が重い
+    - 64bit 版の問題?
   - node.js サポート対象外
+- ウインドーズ文化
+  - C:\Program Files
+  - 【最新】基本設計書 (2).xls.xlsx
 
 ---
 
