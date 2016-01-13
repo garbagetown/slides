@@ -96,10 +96,27 @@ SSD や メモリの大容量/低価格化が進めば、従来のデータ処�
 ## 内部設計
 
 ### 抽出
+- Sqoop
+  - 動作仕様を正しく理解する必要がある
+    - [Sqoop User Guide (v1.4.6)](http://sqoop.apache.org/docs/1.4.6/SqoopUserGuide.html#_selecting_the_data_to_import)
+  - `OR` が使用できないなど、並列分散処理特有の制限がある
+  - 取得データの並び順序を考慮しないと、取得データの重複/欠損が発生する
 
 ### 加工
+- Map/Reduce
+  - データの量や偏りに応じてチューニングできるよう、各種パラメータは外部より指定可能とする
+    - Reducer 数
+    - Mapper/Reducer のコンテナサイズ
+    - Mapper/Reducer のヒープサイズ
+  - 特定の Reducer に処理が偏らないよう、Combiner や Partitioner を適切に活用する
+  - ジョブ同士が衝突しないよう、中間データの名前空間を意識する
 
 ### 登録
+- Oracle Loader for Hadoop
+  - OCI ダイレクトインサートを使用する場合は、対象テーブルをパーティショニングする必要がある
+    - 日付によるレンジパーティション
+    - 適切なパーティションキーがない場合でも、単一パーティションテーブルとする
+
 
 ---
 
