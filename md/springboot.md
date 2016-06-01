@@ -23,26 +23,36 @@ DTS Developer's Meetup #11
 3. Java エンジニアではない
 4. エンジニアではない
 
-<small>
-※良い/悪いではないので恥ずかしがらずに (・ω・)ノ
-</small>
+良い/悪いではないので恥ずかしがらずに  
+ (・ω・)ノ
 
 ---
 ## 動機
-- Java フレームワーク難民
+- Java フレームワーク難民救済
   - Struts 1 EOL
   - Seasar2 EOL
   - Struts 2 脆弱性大杉
-- クラウド
-- マイクロサービスアーキテクチャ
-- Spring Boot は有力な選択肢
+- 新時代への備え
+  - クラウド
+  - マイクロサービスアーキテクチャ
 
 ---
 ## 宣伝
 - JJUG ナイトセミナー
 
 ---
+## Spring Boot とは
+- 既存の Spring Framework 資産を  
+  簡単かつモダンに活用する仕組み
+- プラットフォーム
+- ~~フレームワーク~~
+- ~~ライブラリ~~
+
+---
 ## _DEMO_
+- アプリケーションの作成
+- 設定変更
+- 依存性の追加
 
 ---
 ## アプリケーション作成
@@ -122,6 +132,33 @@ INFO : Started SpringBootSample in 2.205 seconds (JVM running for 4.526)
 ```
 
 cURL でアクセス
+```sh
+$ curl localhost:8080
+Hello, Spring Boot!
+```
+
+---
+## Hello, Spring Boot!
+`mvn package` で実行可能 JAR を作成して起動
+```sh
+$ mvn package
+(snip)
+[INFO] Building jar: /Users/garbagetown/Desktop/spring-boot-sample/target/spring-boot-sample-0.0.1-SNAPSHOT.jar
+(snip)
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 10.909 s
+[INFO] Finished at: 2016-06-02T02:31:39+09:00
+[INFO] Final Memory: 15M/143M
+[INFO] ------------------------------------------------------------------------
+```
+```sh
+$ java -jar target/spring-boot-sample-0.0.1-SNAPSHOT.jar 
+(snip)
+INFO : Tomcat started on port(s): 8080 (http)
+INFO : Started SpringBootSample in 7.46 seconds (JVM running for 8.261)
+```
 ```sh
 $ curl localhost:8080
 Hello, Spring Boot!
@@ -251,8 +288,14 @@ $ curl localhost:8888/metrics | jq -r
 ```
 
 ---
-## REST API
-pom.xml に以下の依存性を追加して簡単な REST API を作る
+## _DEMO_
+- REST API の作成
+
+![](img/springboot_002.jpg)
+
+---
+## 依存性追加
+pom.xml に以下の依存性を追加する
 ```xml
 <dependency>
   <groupId>org.springframework.boot</groupId>
@@ -333,7 +376,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
 ---
 ## Controller
-Entity をすべて取得して返却する Controller クラスを作る
+Entity を取得して返却する Controller クラスを作る
 ```java
 package com.example;
 
@@ -373,6 +416,15 @@ $ curl localhost:8888/employee | jq
   },
 (snip)
 ```
+
+---
+## まとめ
+
+---
+## おまけ
+- 実行可能 JAR
+- バナーテキスト
+- バナー画像
 
 ---
 ## 参考
