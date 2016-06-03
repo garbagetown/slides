@@ -53,13 +53,13 @@ DTS Developer's Meetup #11
 100 スライドは 1 デモに如かず
 
 ---
-## アプリケーション作成
-GUI でプロジェクト生成
+## プロジェクト作成
+GUI でプロジェクト作成
 ![](img/springboot_001.jpg)
 
 ---
-## アプリケーション作成
-cURL でアクセスすると使い方を教えてくれる
+## プロジェクト作成
+cURL でアクセスすると使い方を表示
 ```sh
 $ curl start.spring.io
 (snip)
@@ -79,8 +79,8 @@ To create a web/data-jpa gradle project unpacked:
 ```
 
 ---
-## アプリケーション作成
-CUI でプロジェクト生成
+## プロジェクト作成
+CUI でプロジェクト作成
 ```sh
 $ curl https://start.spring.io/starter.tgz \
 > -d dependencies=web \
@@ -101,7 +101,7 @@ spring-boot-sample/src/test/java/com/example/SpringBootSampleTests.java
 
 ---
 ## Hello, Spring Boot!
-`@RestController` でエンドポイントを作成する
+`@RestController` でエンドポイントを作る
 ```java
 package com.example;
 (snip)
@@ -137,7 +137,7 @@ Hello, Spring Boot!
 
 ---
 ## Hello, Spring Boot!
-`mvn package` で実行可能 JAR を作成して起動
+`mvn package` で実行可能 JAR を作って起動
 ```sh
 $ mvn package
 (snip)
@@ -164,19 +164,19 @@ Hello, Spring Boot!
 
 ---
 ## application.properties
-ポート番号を変更してみる
+例えばポート番号を変更する
 ```sh
 $ cat src/main/resources/application.properties
-server.port=80
+server.port=8880
 ```
 ```sh
 $ mvn spring-boot:run
 (snip)
-INFO : Tomcat started on port(s): 80 (http)
+INFO : Tomcat started on port(s): 8880 (http)
 INFO : Started SpringBootSample in 2.031 seconds (JVM running for 4.326)
 ```
 ```sh
-$ curl localhost
+$ curl localhost:8880
 Hello, Spring Boot!
 ```
 
@@ -198,6 +198,8 @@ INFO : Started SpringBootSample in 1.75 seconds (JVM running for 4.306)
 $ curl localhost:8888
 Hello, Spring Boot!
 ```
+
+優先順位は [ドキュメント](http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html) 参照  
 環境ごとに JAR を作り直すのは過去の話
 
 ---
@@ -235,13 +237,13 @@ $ curl localhost:8888\?name\=スプリングブート
 `characterEncodingFilter` は過去の話
 
 ---
-## actuator
-pom.xml に追加するだけでエンドポイントが増える
+## Auto Configuration
+依存性を追加するだけで自動設定
 ```xml
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-actuator</artifactId>
-    </dependency>
+<dependency>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-actuator</artifactId>
+</dependency>
 ```
 ```sh
 $ mvn spring-boot:run
@@ -388,7 +390,7 @@ import org.springframework.web.bind.annotation.*;
 public class EmployeeController {
     @Autowired
     EmployeeRepository repository;
-    @RequestMapping(value = "/employee", method = RequestMethod.GET)
+    @RequestMapping("/employee")
     public List<Employee> get() {
         return repository.findAll();
     }
@@ -418,13 +420,65 @@ $ curl localhost:8888/employee | jq
 ```
 
 ---
-## まとめ
+## 仕組み
+- 依存性解決
+- 自動設定
 
 ---
 ## おまけ
-- 実行可能 JAR
-- バナーテキスト
-- バナー画像
+
+---
+## Fully Executable JAR
+リンクを貼るだけで service 起動
+```xml
+<plugin>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-maven-plugin</artifactId>
+    <configuration>
+        <executable>true</executable>
+    </configuration>
+</plugin>
+```
+```sh
+$ mvn package
+```
+```sh
+$ head -50 target/spring-boot-sample-0.0.1-SNAPSHOT.jar
+#!/bin/bash
+(snip)
+# Initialize variables that cannot be provided by a .conf file
+WORKING_DIR="$(pwd)"
+# shellcheck disable=SC2153
+[[ -n "$JARFILE" ]] && jarfile="$JARFILE"
+[[ -n "$APP_NAME" ]] && identity="$APP_NAME"
+```
+
+---
+## banner.txt
+起動時の ascii アートをカスタマイズ
+```sh
+$ vim src/main/resources/banner.txt 
+```
+```sh
+$ mvn spring-boot:run
+(snip)
+[INFO] --- spring-boot-maven-plugin:1.3.5.RELEASE:run (default-cli) @ spring-boot-sample ---
+
+███████╗████████╗██████╗ ██╗   ██╗████████╗███████╗
+██╔════╝╚══██╔══╝██╔══██╗██║   ██║╚══██╔══╝██╔════╝
+███████╗   ██║   ██████╔╝██║   ██║   ██║   ███████╗
+╚════██║   ██║   ██╔══██╗██║   ██║   ██║   ╚════██║
+███████║   ██║   ██║  ██║╚██████╔╝   ██║   ███████║
+╚══════╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝    ╚═╝   ╚══════╝
+
+(snip)
+INFO : Tomcat started on port(s): 8080 (http)
+INFO : Started SpringBootSample in 5.525 seconds (JVM running for 11.312)
+```
+[ascii アートを作るサービス](http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20) で遊ぶ
+
+---
+## まとめ
 
 ---
 ## 参考
@@ -437,3 +491,6 @@ $ curl localhost:8888/employee | jq
 - Spring Boot の背景と仕組み
   - [Why SpringBoot? - SivaLabs](http://sivalabs.in/2016/03/why-springboot/)
   - [How SpringBoot AutoConfiguration magic works? - SivaLabs](http://sivalabs.in/2016/03/how-springboot-autoconfiguration-magic/)
+
+---
+# おわり
