@@ -32,7 +32,7 @@ DTS Developer's Meetup #11
   - Struts 1 EOL
   - Seasar2 EOL
   - Struts 2 脆弱性大杉
-- 新時代への備え
+- 近い将来への備え
   - クラウド
   - マイクロサービスアーキテクチャ
 
@@ -44,15 +44,13 @@ DTS Developer's Meetup #11
 ## Spring Boot とは
 - 既存の Spring Framework 資産を  
   簡単かつモダンに活用する仕組み
-- プラットフォーム
+- 依存性管理と自動設定を行う基盤
 - ~~フレームワーク~~
 - ~~ライブラリ~~
 
 ---
 ## _DEMO_
-- アプリケーションの作成
-- 設定変更
-- 依存性の追加
+100 スライドは 1 デモに如かず
 
 ---
 ## アプリケーション作成
@@ -289,9 +287,11 @@ $ curl localhost:8888/metrics | jq -r
 
 ---
 ## _DEMO_
-- REST API の作成
+こういうアプリを作ってみる
 
 ![](img/springboot_002.jpg)
+
+<small>Powerd by [Iconset:small-n-flat icons - Download 148 free & premium icons on Iconfinder](https://www.iconfinder.com/iconsets/small-n-flat)</small>
 
 ---
 ## 依存性追加
