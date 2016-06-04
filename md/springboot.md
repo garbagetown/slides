@@ -28,7 +28,7 @@ DTS Developer's Meetup #11
 
 ---
 ## 動機
-- Java フレームワーク難民救済
+- Java フレームワーク難民の救済
   - Struts 1 EOL
   - Seasar2 EOL
   - Struts 2 脆弱性大杉
@@ -53,12 +53,12 @@ DTS Developer's Meetup #11
 100 スライドは 1 デモに如かず
 
 ---
-## プロジェクト作成
-GUI でプロジェクト作成
+## プロジェクト生成
+GUI でプロジェクト生成
 ![](img/springboot_001.jpg)
 
 ---
-## プロジェクト作成
+## プロジェクト生成
 cURL でアクセスすると使い方を表示
 ```sh
 $ curl start.spring.io
@@ -79,8 +79,8 @@ To create a web/data-jpa gradle project unpacked:
 ```
 
 ---
-## プロジェクト作成
-CUI でプロジェクト作成
+## プロジェクト生成
+CUI でプロジェクト生成
 ```sh
 $ curl https://start.spring.io/starter.tgz \
 > -d dependencies=web \
@@ -119,7 +119,7 @@ public class SpringBootSample {
 ```
 ---
 ## Hello, Spring Boot!
-`mvn spring-boot:run` で組み込み Tomcat を起動
+組み込み Tomcat を起動
 ```sh
 $ mvn spring-boot:run
 (snip)
@@ -137,7 +137,7 @@ Hello, Spring Boot!
 
 ---
 ## Hello, Spring Boot!
-`mvn package` で実行可能 JAR を作って起動
+実行可能 JAR を作って起動
 ```sh
 $ mvn package
 (snip)
@@ -288,16 +288,15 @@ $ curl localhost:8888/metrics | jq -r
 ```
 
 ---
-## _DEMO_
-こういうアプリを作ってみる
-
+## _DEMO2_
+簡単な REST API を作る  
 ![](img/springboot_002.jpg)
 
 <small>Powerd by [Iconset:small-n-flat icons - Download 148 free & premium icons on Iconfinder](https://www.iconfinder.com/iconsets/small-n-flat)</small>
 
 ---
 ## 依存性追加
-pom.xml に以下の依存性を追加する
+pom.xml に依存性を追加
 ```xml
 <dependency>
   <groupId>org.springframework.boot</groupId>
@@ -365,8 +364,8 @@ public class Employee {
 
 ---
 ## Repository
-Spring Data JPA が提供している `JpaRepository` を  
-継承して Repository インタフェースを作る
+Spring Data JPA が提供している  
+`JpaRepository` を継承するだけ
 ```java
 package com.example;
 
@@ -421,8 +420,93 @@ $ curl localhost:8888/employee | jq
 
 ---
 ## 仕組み
-- 依存性解決
-- 自動設定
+
+---
+## 依存性解決
+親に `spring-boot-starter-parent` を指定
+```xml
+    <artifactId>spring-boot-sample</artifactId>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+    </parent>
+```
+さらに `spring-boot-dependencies` を指定
+```xml
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+    </parent>
+```
+
+---
+## 依存性解決
+依存性のバージョンを一元管理
+```xml
+    <artifactId>spring-boot-dependencies</artifactId>
+    <properties>
+        <flyway.version>3.2.1</flyway.version>
+        <h2.version>1.4.191</h2.version>
+    </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-core</artifactId>
+                <version>${flyway.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.h2database</groupId>
+                <artifactId>h2</artifactId>
+                <version>${h2.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+```
+
+---
+## 自動設定
+`@EnableAutoConfiguration` で  
+`o.s.b.autoconfigure` 配下を走査
+```java
+@SpringBootApplication
+public class SpringBootSample {
+  (snip)
+}
+```
+```java
+package org.springframework.boot.autoconfigure;
+(snip)
+@Configuration
+@EnableAutoConfiguration
+@ComponentScan
+public @interface SpringBootApplication {
+  (snip)
+}
+```
+
+---
+## 自動設定
+特定のクラスやビーンの存在状況に応じて自動設定
+```java
+package org.springframework.boot.autoconfigure.web;
+(snip)
+@Configuration
+@ConditionalOnWebApplication
+@Import(EmbeddedServletContainerCustomizerBeanPostProcessorRegistrar.class)
+public class EmbeddedServletContainerAutoConfiguration {
+    (snip)
+    @Configuration
+    @ConditionalOnClass({ Servlet.class, Tomcat.class })
+    @ConditionalOnMissingBean(value = EmbeddedServletContainerFactory.class, search = SearchStrategy.CURRENT)
+    public static class EmbeddedTomcat {
+        @Bean
+        public TomcatEmbeddedServletContainerFactory tomcatEmbeddedServletContainerFactory() {
+            return new TomcatEmbeddedServletContainerFactory();
+        }
+    }
+```
 
 ---
 ## おまけ
@@ -479,6 +563,17 @@ INFO : Started SpringBootSample in 5.525 seconds (JVM running for 11.312)
 
 ---
 ## まとめ
+
+---
+## Spring Boot
+- 豊富な Spring Framework 資産を簡単に活用
+  - Spring MVC
+  - Spring Data JPA
+  - etc.
+- ポータブルなアプリケーションを簡単に作成
+  - クラウド
+  - マイクロサービスアーキテクチャ
+- これまでとこれからを地続きでつなぐ技術
 
 ---
 ## 参考
