@@ -27,7 +27,7 @@ DTS Developer's Meetup #11
  (・ω・)ノ
 
 ---
-## 動機
+## 今日のゴール
 - Java フレームワーク難民の救済
   - Struts 1 EOL
   - Seasar2 EOL
@@ -123,13 +123,19 @@ public class SpringBootSample {
 ```sh
 $ mvn spring-boot:run
 (snip)
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v1.3.5.RELEASE)
+(snip)
 INFO : Mapped "{[/]}" onto public java.lang.String com.example.SpringBootSample.hello()
 (snip)
 INFO : Tomcat started on port(s): 8080 (http)
 INFO : Started SpringBootSample in 2.205 seconds (JVM running for 4.526)
 ```
-
-cURL でアクセス
 ```sh
 $ curl localhost:8080
 Hello, Spring Boot!
@@ -204,7 +210,7 @@ Hello, Spring Boot!
 
 ---
 ## application.yml
-YAML 形式でも設定できる。
+YAML 形式でも設定できる
 ```sh
 $ cat src/main/resources/application.yml
 greeting: こんにちは
@@ -289,14 +295,14 @@ $ curl localhost:8888/metrics | jq -r
 
 ---
 ## _DEMO2_
-簡単な REST API を作る  
+
 ![](img/springboot_002.jpg)
 
 <small>Powerd by [Iconset:small-n-flat icons - Download 148 free & premium icons on Iconfinder](https://www.iconfinder.com/iconsets/small-n-flat)</small>
 
 ---
 ## 依存性追加
-pom.xml に依存性を追加
+
 ```xml
 <dependency>
   <groupId>org.springframework.boot</groupId>
@@ -334,7 +340,7 @@ INSERT INTO EMPLOYEE (NAME,PHONE,EMAIL) VALUES ('Cullen Huff','012-412-8434','In
 INSERT INTO EMPLOYEE (NAME,PHONE,EMAIL) VALUES ('Amir Byers','027-922-6220','tempor.lorem@aenim.net');
 (snip)
 ```
-JPA の DDL 作成機能を無効にする
+JPA のテーブル作成機能を無効にする
 ```sh
 $ grep ddl src/main/resources/application.properties
 spring.jpa.hibernate.ddl-auto=none
@@ -390,7 +396,7 @@ public class EmployeeController {
     @Autowired
     EmployeeRepository repository;
     @RequestMapping("/employee")
-    public List<Employee> get() {
+    public List<Employee> findAll() {
         return repository.findAll();
     }
 }
@@ -448,6 +454,7 @@ $ curl localhost:8888/employee | jq
     <properties>
         <flyway.version>3.2.1</flyway.version>
         <h2.version>1.4.191</h2.version>
+        (snip)
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -462,6 +469,7 @@ $ curl localhost:8888/employee | jq
                 <version>${h2.version}</version>
             </dependency>
         </dependencies>
+        (snip)
     </dependencyManagement>
 ```
 
@@ -507,6 +515,28 @@ public class EmbeddedServletContainerAutoConfiguration {
         }
     }
 ```
+
+---
+## Pros/Cons
+
+---
+## Pros
+- とにかく簡単
+- 既存技術をそのまま利用できる
+  - Maven/Gradle
+  - Spring MVC
+  - Spring Data JPA
+  - etc.
+- [ドキュメント](https://spring.io/docs)、[サンプル](https://github.com/spring-projects/spring-boot/tree/master/spring-boot-samples) が充実
+- クラウド/MSA 時代に対応
+
+---
+## Cons
+- サーバ再起動が必要かつ重い
+  - [Developer tools](http://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-devtools.html) に期待
+  - [JRebel](https://zeroturnaround.com/software/jrebel/) を買う
+- [JSP 非推奨](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-jsp-limitations)
+  - SPA/MSA 時代には無用の長物
 
 ---
 ## おまけ
@@ -588,4 +618,4 @@ INFO : Started SpringBootSample in 5.525 seconds (JVM running for 11.312)
   - [How SpringBoot AutoConfiguration magic works? - SivaLabs](http://sivalabs.in/2016/03/how-springboot-autoconfiguration-magic/)
 
 ---
-# おわり
+## おわり
