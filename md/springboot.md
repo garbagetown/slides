@@ -16,17 +16,6 @@ DTS Developer's Meetup #11
   - Developer's Summit 2014 登壇
 
 ---
-## アンケート
-
-1. Spring Boot を知っている
-2. Spring Framework を知っている
-3. Java エンジニアではない
-4. エンジニアではない
-
-良い/悪いではないので恥ずかしがらずに  
- (・ω・)ノ
-
----
 ## 今日のゴール
 - Java フレームワーク難民の救済
   - Struts 1 EOL
@@ -39,6 +28,17 @@ DTS Developer's Meetup #11
 ---
 ## 宣伝
 - JJUG ナイトセミナー
+
+---
+## アンケート
+
+1. Spring Boot を知っている
+2. Spring Framework を知っている
+3. Java エンジニアではない
+4. エンジニアではない
+
+良い/悪いではないので恥ずかしがらずに  
+ (・ω・)ノ
 
 ---
 ## Spring Boot とは
@@ -537,6 +537,7 @@ public class EmbeddedServletContainerAutoConfiguration {
   - [JRebel](https://zeroturnaround.com/software/jrebel/) を買う
 - [JSP 非推奨](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-jsp-limitations)
   - SPA/MSA 時代には無用の長物
+  - [Thymeleaf](http://www.thymeleaf.org/) を使う
 
 ---
 ## おまけ
