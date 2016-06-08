@@ -620,9 +620,10 @@ INFO : Started SpringBootSample in 5.525 seconds (JVM running for 11.312)
 
 
 ---
-## 宣伝
-- JJUG ナイトセミナー
+![](img/springboot_003.jpg)
 
+---
+## JJUG ナイトセミナー
 
 ---
 ## おわり
