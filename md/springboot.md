@@ -19,15 +19,15 @@ DTS Developer's Meetup #11
 ## 今日のゴール
 - Java フレームワーク難民の救済
   - Struts 1 EOL
+    - [CVE-2016-1181](http://jvn.jp/jp/JVN03188560/index.html)
+    - [CVE-2016-1182](http://jvn.jp/jp/JVN65044642/index.html)
   - Seasar2 EOL
   - Struts 2 脆弱性大杉
+    - [CVE-2016-3081](https://www.ipa.go.jp/security/ciadr/vul/20160427-struts.html)
+    - [Security Bulletins](https://struts.apache.org/docs/security-bulletins.html)
 - 近い将来への備え
   - クラウド
   - マイクロサービスアーキテクチャ
-
----
-## 宣伝
-- JJUG ナイトセミナー
 
 ---
 ## アンケート
@@ -617,6 +617,12 @@ INFO : Started SpringBootSample in 5.525 seconds (JVM running for 11.312)
 - Spring Boot の背景と仕組み
   - [Why SpringBoot? - SivaLabs](http://sivalabs.in/2016/03/why-springboot/)
   - [How SpringBoot AutoConfiguration magic works? - SivaLabs](http://sivalabs.in/2016/03/how-springboot-autoconfiguration-magic/)
+
+
+---
+## 宣伝
+- JJUG ナイトセミナー
+
 
 ---
 ## おわり
