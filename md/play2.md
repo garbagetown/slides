@@ -19,35 +19,92 @@ JJUG ナイトセミナー
 - Wildfly Swarm
 
 ---
-## 共通点/差異
-- 共通点
-  - JVM で動作する Web フレームワーク
-  - 組み込みサーバで動作
-- 差異
-  - サーブレット API 非依存
-    - Cookie セッション
-    - ホットリロード
-  - Scala 製
-    - Java/Scala API
-  - 型安全
-    - ルーティング
-    - リバースルーティング
-    - テンプレート引数
-  - 非同期処理
-    - Akka
+## 共通点
+- JVM で動作する Web フレームワーク
+- 組み込みサーバで動作
+
+---
+## 差異
+- サーブレット API 非依存
+  - Cookie セッション
+  - ライブコンパイル/ホットリロード
+- Scala 製
+  - Java/Scala API
+- 型安全
+  - ルーティング/リバースルーティング
+  - テンプレート引数
+- 非同期処理
+  - Akka
 
 ---
 ## ゴール
-- Play2 の Pros/Cons を知ってもらう
+- Play Framework の Pros/Cons を  
+  知ってもらう
 - Scala に興味を持ってもらう
 - (翻訳を手伝ってもらう)
 
 ---
 ## Agenda
 - Play Framework の歴史
-  - Play1/Play2
+- Play Framework の特徴
+- Play Framework 1 の特徴
 - Play Framework 2 の特徴
-  - サーブレット API 非依存
-  - Java/Scala API
-  - 型安全
-  - 非同期処理
+
+---
+## Play Framework の歴史
+
+|2009|2010|2011|2012|2013    |2014|2015    |2016  |
+|----|----|----|----|--------|----|--------|------|
+|1.0 |1.1 |1.2 |    |        |    |1.3/1.4 |1.4.2 |
+|    |    |    |2.0 |2.1/2.2 |2.3 |2.4     |2.5.3 |
+
+---
+## Play1
+- Zengularity (旧 Zenexity)
+- Java 製
+- Java 用
+- Groovy テンプレート
+- Python スクリプト
+- ivy
+
+---
+## Play2
+- Lightbend (旧 Typesafe)
+- Scala 製
+- Scala/Java 用
+- Scala テンプレート
+- Activator
+- sbt
+
+---
+## Play
+- Servlet API 非依存
+- ステートレスアーキテクチャ
+- ホットリロード
+- ライブコンパイル
+- リバースルーティング
+- Evolutions
+
+---
+## Play1
+- Java の慣習を無視
+  - play.mvc.results.Result extends  
+    FastRuntimeException
+- リフレクション/バイトコード拡張を多用
+  - Java.java
+  - JPAEnhancer.java
+- 関数型機能を独自実装
+  - F.java
+
+---
+## Play2
+- Activator
+- 型安全
+  - Twirl
+- 非同期処理
+  - Akka
+
+---
+## 参考
+- [なぜ Play は Servlet を使っていないのか（Why there is no servlets in Play 翻訳） - ikeike443のブログ](http://ikeike443.hatenablog.com/entry/20120107/p1)
+- https://groups.google.com/d/msg/play-framework/jNyoIWv_xGQ/URpYquncn2oJ
