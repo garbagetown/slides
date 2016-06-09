@@ -19,8 +19,7 @@ DTS Developer's Meetup #11
 ## 今日のゴール
 - Java フレームワーク難民の救済
   - Struts 1 EOL
-    - [CVE-2016-1181](http://jvn.jp/jp/JVN03188560/index.html)
-    - [CVE-2016-1182](http://jvn.jp/jp/JVN65044642/index.html)
+    - [CVE-2016-1181](http://jvn.jp/jp/JVN03188560/index.html), [CVE-2016-1182](http://jvn.jp/jp/JVN65044642/index.html)
   - Seasar2 EOL
   - Struts 2 脆弱性大杉
     - [CVE-2016-3081](https://www.ipa.go.jp/security/ciadr/vul/20160427-struts.html)
