@@ -626,9 +626,12 @@ INFO : Started SpringBootSample in 5.525 seconds (JVM running for 11.312)
 - 2016-06-27（月）19:00 - 21:00
 - 日本オラクル株式会社 本社 13階
 - Java フレームワーク特集
-  - Spring Boot (槙さん)
-  - WildFly Swarm (田邊さん)
-  - Play Framework (おれ)
+  - Spring Boot: 槙さん
+  - WildFly Swarm: 田邊さん
+  - Play Framework: おれ
+
+興味がある人は観に来てください？！  
+((((；ﾟДﾟ))))ｶﾞｸｶﾞｸﾌﾞﾙﾌﾞﾙ
 
 ---
-## おわり
+# おわり
