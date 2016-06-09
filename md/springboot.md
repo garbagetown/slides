@@ -53,11 +53,6 @@ DTS Developer's Meetup #11
 
 ---
 ## プロジェクト生成
-GUI でプロジェクト生成
-![](img/springboot_001.jpg)
-
----
-## プロジェクト生成
 cURL でアクセスすると使い方を表示
 ```sh
 $ curl start.spring.io
@@ -97,6 +92,11 @@ spring-boot-sample/src/main/java/com/example/SpringBootSample.java
 spring-boot-sample/src/main/resources/application.properties
 spring-boot-sample/src/test/java/com/example/SpringBootSampleTests.java
 ```
+
+---
+## プロジェクト生成
+GUI でプロジェクト生成
+![](img/springboot_001.jpg)
 
 ---
 ## Hello, Spring Boot!
