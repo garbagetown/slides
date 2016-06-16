@@ -616,7 +616,8 @@ INFO : Started SpringBootSample in 5.525 seconds (JVM running for 11.312)
 - Spring Boot の背景と仕組み
   - [Why SpringBoot? - SivaLabs](http://sivalabs.in/2016/03/why-springboot/)
   - [How SpringBoot AutoConfiguration magic works? - SivaLabs](http://sivalabs.in/2016/03/how-springboot-autoconfiguration-magic/)
-
+- 書籍
+  - [はじめてのSpring Boot](https://www.amazon.co.jp/dp/4777518655/ref=cm_sw_r_tw_dp_JDMyxb5VNBZX6)
 
 ---
 ![](img/springboot_003.jpg)
