@@ -119,10 +119,10 @@ Spring Boot
 - アンケート (3min)
 - なぜ Play? (5min)
 - Play とは
-  - Play1 (10min)
-  - Play2 (10min)
+  - Play (10min)
+  - Play1 (5min)
+  - Play2 (8min)
 - まとめ (2min)
-- 質疑応答 (3min)
 
 ---
 ## 自己紹介
