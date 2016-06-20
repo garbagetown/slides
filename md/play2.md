@@ -1,10 +1,12 @@
-# Play Framework の<br/>紹介
+# The High Velocity  
+# Web Framework  
+# For Java and Scala
 
 2016-06-27<br/>
 JJUG ナイトセミナー
 
 ---
-## 序文
+## 序文  
 ```
 Javaでシステム構築を行う時に、フレームワークは欠かせないものとなっているでしょう。  
 技術のトレンドの移り変わりと共に、様々なフレームワークが生まれ、形を変え、あるいは
@@ -85,11 +87,11 @@ Spring Boot
 ## 差異
 ### Play1/2
 - Servlet API 非依存
-- フルスタック
 - ステートレス
 - スケーラブル
 - ホットリロード
 - ライブコンパイル
+- フルスタック
 
 ```
 ※ 差異が Play Framework の利点/欠点になるので詳しく説明する
@@ -106,22 +108,22 @@ Spring Boot
 - Scala 製
   - Java/Scala API
 - 型安全
-  - ルーティング/リバースルーティング
-  - テンプレート引数
+  - ルーティング
+  - ビューテンプレート
 - 非同期処理
   - Akka
-- アセットパイプライン
+- アセット管理
 
 
 ---
 ## Agenda
 - 自己紹介 (2min)
 - アンケート (3min)
-- なぜ Play? (5min)
+- なぜ Play? (3min)
 - Play とは
-  - Play (10min)
+  - Play Framework (10min)
   - Play1 (5min)
-  - Play2 (8min)
+  - Play2 (10min)
 - まとめ (2min)
 
 ---
@@ -184,16 +186,19 @@ Spring Boot
   - S2 機能追加停止
   - Oracle による Sun の買収
 - クラウド/モバイルの足音
-- Play1
+- Java にも Rails がほしい
+  - Play1
 
 ---
 ## 2012 - 
-- Struts1 EOL
-- Seasar2 EOL
+- フレームワークの世代交代
+  - Struts1 EOL
+  - Seasar2 EOL
 - Java の復活
   - Java 8, Spring 4, JavaEE 7
 - クラウド/モバイルの本格化
-- Play2
+- Java/MVC フレームワークの先へ
+  - Play2
 
 ---
 ## Play とは
@@ -201,22 +206,35 @@ Spring Boot
 ---
 ## Play Framework
 - Web フレームワーク
+  - ~~Java フレームワーク~~
   - Servlet API 非依存
 - ポータブルアプリケーション
   - 組み込み Netty
-- フルスタック
 - ステートレス
   - Cookie セッション
 - スケーラブル
-  - キャッシュ API
 
 ---
 ## Play Framework
 - ホットリロード
 - ライブコンパイル
   - 組み込み Eclipse コンパイラ
+- モジュール
 - 依存性管理
 - スキーマ管理
+
+---
+## Play Framework
+- フルスタック
+  - MVC
+  - ORM
+  - WebSocket
+  - Web サービスクライアント
+  - JSON, XML
+  - Cache
+  - Job
+  - Test
+  - etc.
 
 ---
 ## Play1
@@ -228,6 +246,15 @@ Spring Boot
 - ivy
 
 ---
+## Play1 の使い方
+
+---
+## Play1 の良いところ
+
+---
+## Play1 の悪いところ
+
+---
 ## Play2
 - Lightbend (旧 Typesafe)
   - James Roper (@jroper)
@@ -237,18 +264,41 @@ Spring Boot
 - sbt
 
 ---
+## Play2 の使い方
+
+---
+## Play2 の良いところ
+
+---
+## Play2 の悪いところ
+
+---
 ## まとめ
 - Play Framework
-  - Servlet API 非依存
-  - フルスタック
+  - Web フレームワーク
+  - ポータブルアプリケーション
   - ステートレス
   - スケーラブル
+  - ホットリロード
+  - ライブコンパイル
+  - モジュール
+  - 依存性管理
+  - スキーマ管理
+
+---
+## まとめ
 - Play1
   - Java 製 / Java 用
 - Play2
   - Scala 製 / Scala, Java 用
   - 型安全
   - 非同期
+  - アセット管理
+
+---
+## まとめ
+- Play1 の良いところ/悪いところ
+- Play2 の良いところ/悪いところ
 
 ---
 ## 参考
@@ -258,3 +308,5 @@ Spring Boot
 - [Seasar2を新規案件に採用するのはそろそろやめたほうがいい - きしだのはてな](http://d.hatena.ne.jp/nowokay/20131107)
 - [クラウド上のサービス開発の新しい動向 --- JavaEE7とPlay2.0 ---](http://www.slideshare.net/maruyama097/javaee7play20)
 - [Having Fun with Play](http://www.slideshare.net/crnixon/having-fun-with-play)
+- [Java ラブなヌーラボにおける Scala + Playframework 体験記 // Speaker Deck](https://speakerdeck.com/nulabinc/java-rabunanuraboniokeru-scala-plus-playframework-ti-yan-ji)
+- [java - Play! framework uses a <lot> of statics - Stack Overflow](http://stackoverflow.com/questions/5192904/play-framework-uses-a-lot-of-statics/5193721#5193721)
