@@ -330,14 +330,53 @@ localhost:9000 にアクセスする
 - activator をダウンロードする
 - 任意の場所に展開する
 - PATH を通す
-- プロジェクトを作る
-  - activator で作る
-  - activator ui で作る
-- 起動する
-- localhost:9000 にアクセスする
 
 ---
 ## Play2 の使い方
+activator でプロジェクトを作る
+```bat
+C:\sample\play2>activator list-templates
+(snip)
+Featured Seed Templates:
+(snip)
+  play-java
+  play-scala
+Other Seed Templates:
+(snip)
+  play-java-2.3
+  play-java-2.4
+(snip)
+C:\play2>activator new play2sample play-java-2.4
+(snip)
+OK, application "play2sample" is being created using the "play-java-2.4" template.
+
+To run "play2sample" from the command line, "cd play2sample" then:
+C:\sample\play2\play2sample/activator run
+(snip)
+```
+
+---
+## Play2 の使い方
+- activator ui で作る
+
+---
+## Play2 の使い方
+起動する
+```bat
+C:\sample\play2\play2sample>activator run
+(snip)
+[info] --- (Running the application, auto-reloading is enabled) ---
+[info]
+[info] p.c.s.NettyServer - Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+[info]
+[info] (Server started, use Ctrl+D to stop and go back to the console...)
+[info]
+```
+localhost:9000 にアクセスする
+
+---
+## Play2 の使い方
+- 依存性を追加する
 - インメモリデータベースを有効にする
 - evolutions スクリプトを書く
 - モデルを書く
@@ -407,3 +446,4 @@ localhost:9000 にアクセスする
 - [Having Fun with Play](http://www.slideshare.net/crnixon/having-fun-with-play)
 - [Java ラブなヌーラボにおける Scala + Playframework 体験記 // Speaker Deck](https://speakerdeck.com/nulabinc/java-rabunanuraboniokeru-scala-plus-playframework-ti-yan-ji)
 - [java - Play! framework uses a <lot> of statics - Stack Overflow](http://stackoverflow.com/questions/5192904/play-framework-uses-a-lot-of-statics/5193721#5193721)
+- [【Play Framework 2.4】Ebeanを使った検索処理 - もふもふした技術メモ](http://mofmof721.hatenablog.com/entry/2015/12/27/214818)
