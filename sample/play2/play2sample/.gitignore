@@ -11,4 +11,5 @@ target
 .cache-tests
 .sbtserver/
 libexec/
-project/
+project/.sbtserver
+project/.sbtserver.lock
