@@ -247,12 +247,74 @@ Spring Boot
 
 ---
 ## Play1 の使い方
+- zip をダウンロードする
+- 任意の場所に展開する
+- PATH を通す
+
+---
+## Play1 の使い方
+プロジェクトを作る
+```sh
+C:\sample\play2>play new play1sample
+~        _            _
+~  _ __ | | __ _ _  _| |
+~ | '_ \| |/ _' | || |_|
+~ |  __/|_|\____|\__ (_)
+~ |_|            |__/
+~
+~ play! 1.4.2, https://www.playframework.com
+~
+~ The new application will be created in C:\sample\play2\play1sample
+~ What is the application name? [play1sample]
+~
+~ OK, the application is created.
+~ Start it with : play run play1sample
+~ Have fun!
+~
+```
+
+---
+## Play1 の使い方
+起動する
+```
+C:\sample\play2\play1sample>play run
+~        _            _
+~  _ __ | | __ _ _  _| |
+~ | '_ \| |/ _' | || |_|
+~ |  __/|_|\____|\__ (_)
+~ |_|            |__/
+~
+~ play! 1.4.2, https://www.playframework.com
+~
+~ Ctrl+C to stop
+~
+~ using java version "1.8.0_45"
+(snip)
+13:41:09,527 WARN  ~ You're running Play! in DEV mode
+13:41:09,597 INFO  ~ Listening for HTTP on port 9000 (Waiting a first request to start) ...
+~ Server is up and running
+```
+localhost:9000 にアクセスする
+
+---
+## Play1 の使い方
+- インメモリデータベースを有効にする
+- evolutions スクリプトを書く
+- モデルを書く
+- コントローラを書く
+- ビューを書く
+- localhost:9000 にアクセスする
 
 ---
 ## Play1 の良いところ
+- 簡単
+- コンパイル速い
 
 ---
 ## Play1 の悪いところ
+- 開発が停滞
+- 斬新杉  
+  ![](img/play2_001.jpg)
 
 ---
 ## Play2
@@ -265,12 +327,44 @@ Spring Boot
 
 ---
 ## Play2 の使い方
+- activator をダウンロードする
+- 任意の場所に展開する
+- PATH を通す
+- プロジェクトを作る
+  - activator で作る
+  - activator ui で作る
+- 起動する
+- localhost:9000 にアクセスする
+
+---
+## Play2 の使い方
+- インメモリデータベースを有効にする
+- evolutions スクリプトを書く
+- モデルを書く
+- コントローラを書く
+- ビューを書く
+- localhost:9000 にアクセスする
+
+---
+## Play2 の使い方
+- Java/Scala 混在
+- 静的検査
+  - コード
+  - ルート
+  - テンプレート
+  - アセット
+- 非同期処理
 
 ---
 ## Play2 の良いところ
+- 簡単
+- 静的検査
+- 非同期処理
 
 ---
 ## Play2 の悪いところ
+- コンパイル遅い
+- 下位非互換
 
 ---
 ## まとめ
@@ -291,7 +385,7 @@ Spring Boot
   - Java 製 / Java 用
 - Play2
   - Scala 製 / Scala, Java 用
-  - 型安全
+  - 静的検査
   - 非同期
   - アセット管理
 
@@ -307,6 +401,9 @@ Spring Boot
 - [なぜ Play は Servlet を使っていないのか（Why there is no servlets in Play 翻訳） - ikeike443のブログ](http://ikeike443.hatenablog.com/entry/20120107/p1)
 - [Seasar2を新規案件に採用するのはそろそろやめたほうがいい - きしだのはてな](http://d.hatena.ne.jp/nowokay/20131107)
 - [クラウド上のサービス開発の新しい動向 --- JavaEE7とPlay2.0 ---](http://www.slideshare.net/maruyama097/javaee7play20)
+
+---
+## 参考
 - [Having Fun with Play](http://www.slideshare.net/crnixon/having-fun-with-play)
 - [Java ラブなヌーラボにおける Scala + Playframework 体験記 // Speaker Deck](https://speakerdeck.com/nulabinc/java-rabunanuraboniokeru-scala-plus-playframework-ti-yan-ji)
 - [java - Play! framework uses a <lot> of statics - Stack Overflow](http://stackoverflow.com/questions/5192904/play-framework-uses-a-lot-of-statics/5193721#5193721)
