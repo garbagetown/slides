@@ -447,3 +447,10 @@ localhost:9000 にアクセスする
 - [Java ラブなヌーラボにおける Scala + Playframework 体験記 // Speaker Deck](https://speakerdeck.com/nulabinc/java-rabunanuraboniokeru-scala-plus-playframework-ti-yan-ji)
 - [java - Play! framework uses a <lot> of statics - Stack Overflow](http://stackoverflow.com/questions/5192904/play-framework-uses-a-lot-of-statics/5193721#5193721)
 - [【Play Framework 2.4】Ebeanを使った検索処理 - もふもふした技術メモ](http://mofmof721.hatenablog.com/entry/2015/12/27/214818)
+- [Play and Reactive Streams #play_ja // Speaker Deck](https://speakerdeck.com/okapies/play-and-reactive-streams-number-play-ja)
+
+---
+## 参考
+- [Play, Anatomy of a web framework: The Web Server.](http://jto.github.io/articles/play_anatomy_part1_bootstrap/)
+- [Play, Anatomy of a web framework: Hot redeploy.](http://jto.github.io/articles/play_anatomy_part2_sbt/)
+- [Play, Anatomy of a web framework: Routing and reverse routing.](http://jto.github.io/articles/play_anatomy_part3_routing/)
