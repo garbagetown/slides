@@ -1,17 +1,22 @@
 package controllers;
 
-import java.util.List;
-
 import models.User;
 import play.*;
+import play.libs.Json;
 import play.mvc.*;
+
 import views.html.*;
+
+import java.util.List;
 
 public class Application extends Controller {
 
     public Result index() {
-        List<User> users = User.find.all();
-        return ok(index.render(users));
+        return ok(index.render("Your new application is ready."));
     }
 
+    public Result list() {
+        List<User> users = User.find.all();
+        return ok(Json.toJson(users));
+    }
 }

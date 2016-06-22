@@ -1,7 +1,7 @@
-@(users: List[User])
+@(message: String)
 
-<ul>
-@for(user <- users) {
-  <li>@user.fullname (@user.email)</li>
+@main("Welcome to Play") {
+
+    <ul id="users"></ul>
+
 }
-</ul>
