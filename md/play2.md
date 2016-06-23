@@ -454,3 +454,10 @@ localhost:9000 にアクセスする
 - [Play, Anatomy of a web framework: The Web Server.](http://jto.github.io/articles/play_anatomy_part1_bootstrap/)
 - [Play, Anatomy of a web framework: Hot redeploy.](http://jto.github.io/articles/play_anatomy_part2_sbt/)
 - [Play, Anatomy of a web framework: Routing and reverse routing.](http://jto.github.io/articles/play_anatomy_part3_routing/)
+
+---
+## 参考
+- [Typesafe Reactive Platformで作るReactive System](http://www.slideshare.net/yugolf/typesafe-reactiveplatformreactivesystem-scalasummitkansai)
+- [Typesafe Reactive Platformで作るReactive System入門](http://www.slideshare.net/yugolf/typesafe-reactive-platformreactive-system)
+- [リアクティブ・アーキテクチャ ～大規模サービスにおける必要性と課題〜 #devsumi](http://www.slideshare.net/okapies/reactive-architecture-20160218-58403521)
+- [Web application development using Play Framework (with Java)](http://www.slideshare.net/saeed_Z_F/web-application-development-using-play-framework-with-java)
